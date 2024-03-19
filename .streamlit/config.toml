@@ -1,0 +1,9 @@
+[theme]
+primaryColor = "#f63366"
+backgroundColor = "#e6f7ff"  # Light very light blue background color
+secondaryBackgroundColor = "#ffffff"  # White secondary background color
+textColor = "#fafafa"
+font = "sans serif"
+
+[server]
+enableStaticServing = true
