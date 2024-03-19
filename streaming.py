@@ -21,7 +21,7 @@ from datetime import datetime, timedelta
 
 ### Configuración de la página
 st.set_page_config(
-    page_title="Streaming Financial Data",
+    page_title="Streaming Retail Data",
     page_icon="🏪",
     layout="wide",
     initial_sidebar_state="expanded")
@@ -49,7 +49,7 @@ st.markdown("""
 }
 
 [data-testid="stMetric"] {
-    background-color: #ccebff;
+    background-color: #A3CEEF;
     text-align: center;
     padding: 15px 0;
     box-shadow: 4px 4px 5px #888888;
@@ -180,7 +180,7 @@ for seconds in range(500):
                 delta = timedelta(minutes=30)
                 current_time = start_time + seconds * timedelta(seconds=50)
                 current_time += timedelta(seconds=100)
-                st.markdown(f"<div style='text-align: center;'><h2 style='font-size: 16px; font-weight: bold; background-color: #ccebff; padding: 10px;'>Current Time: {current_time.strftime('%Y-%m-%d %H:%M:%S') }</h2></div>", unsafe_allow_html=True)
+                st.markdown(f"<div style='text-align: center;'><h2 style='font-size: 16px; font-weight: bold; background-color: #A3CEEF; padding: 10px;'>Current Time: {current_time.strftime('%Y-%m-%d %H:%M:%S') }</h2></div>", unsafe_allow_html=True)
                 st.plotly_chart(fig5, use_container_width=True)
 
             with fig_col2: # KPIs
@@ -248,7 +248,7 @@ for seconds in range(500):
                 delta = timedelta(minutes=30)
                 current_time = start_time + seconds * timedelta(seconds=50)
                 current_time += timedelta(seconds=100)
-                st.markdown(f"<div style='text-align: center;'><h2 style='font-size: 16px; font-weight: bold; background-color: #ccebff; padding: 10px;'>Current Time: {current_time.strftime('%Y-%m-%d %H:%M:%S') }</h2></div>", unsafe_allow_html=True)
+                st.markdown(f"<div style='text-align: center;'><h2 style='font-size: 16px; font-weight: bold; background-color: #A3CEEF; padding: 10px;'>Current Time: {current_time.strftime('%Y-%m-%d %H:%M:%S') }</h2></div>", unsafe_allow_html=True)
                 st.plotly_chart(fig, use_container_width=True)
 
             with fig_col2: # Ranking
@@ -271,7 +271,7 @@ for seconds in range(500):
 
                 fig6.update_traces(marker=dict(line=dict(width=0.5, color='lightblue')))  
 
-                fig6.update_layout(plot_bgcolor='#ccebff', margin=dict(l=50, r=10, t=50, b=50))
+                fig6.update_layout(plot_bgcolor='#A3CEEF', margin=dict(l=50, r=10, t=50, b=50))
                 fig6.update_xaxes(range=[0, 35])
 
                 st.markdown('<h5 style="text-align: center;"><br>Sales Share by Store</h5>', unsafe_allow_html=True)
@@ -284,6 +284,10 @@ for seconds in range(500):
                     st.markdown(f' The third section provides a detailed data view that you can download to observe the evolution over time and conduct your own analysis.', unsafe_allow_html=True)
 
                 st.markdown("### Detailed Data View")
-
+                start_time = datetime.now()
+                delta = timedelta(minutes=30)
+                current_time = start_time + seconds * timedelta(seconds=50)
+                current_time += timedelta(seconds=100)
+                st.markdown(f"<div style='text-align: center;'><h2 style='font-size: 16px; font-weight: bold; background-color: #A3CEEF; padding: 10px;'>Current Time: {current_time.strftime('%Y-%m-%d %H:%M:%S') }</h2></div>", unsafe_allow_html=True)
                 st.dataframe(all_data[['ID_store', 'Type', 'Sales_sqrt_new', 'Minimal_Retail_Price_new', 'Visibility_sqrt_new']])
                 time.sleep(2)
